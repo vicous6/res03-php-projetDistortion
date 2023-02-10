@@ -18,11 +18,11 @@ construct($username, $email,password){
 Class Posts ,
     private ?int id 
     private string content
-    private string date
-construc($content $date){
+    
+construc($content ){
     this id = null
     this content = $content
-    this date = $date
+
 }
 
 Class Categorie
@@ -57,6 +57,106 @@ addPost (Post $post):array{
 }
 
 
+CONTROLER 
+
+astractControler (){
+
+    public fonction render(view value){
+    require layout
+    }
+}
+
+class UserController extends AbstractController {
+    
+    
+  private UserManager $manager;
+
+ public function __construct()
+    {
+        $this->manager= new UserManager("victoroustiakine_phpj11","3306","db.3wa.io","victoroustiakine","c6aaac523840dc2129f6449e52582bf0") ;    
+    }
+
+        public function index (){
+
+
+        $allUsers =$this->manager->getAllUsers();
+
+
+        $this->render( "index" , ["users"=>$allUsers]);
+        }
+
+     }   
+class PostsController extends AbstractController 
+   $this->render( "index" , ["post"=>$allPost]);
+class SalonsController extends AbstractController 
+    $this->render( "index" , ["salon"=>$allSalon]);   
+class CategorysController extends AbstractController 
+    $this->render( "index" , ["category"=>$allCategory]);
+
+
+MANAGER
+
+
+abstract class AbstractManager{
+ 
+    protected PDO $db;
+    protected string $dbName ;
+    protected string $port ;
+    protected string $host ;
+    protected string $username ;
+    protected string $password ;
+
+    
+    protected function initDb (): void{
+         $this->db = new PDO(
+    "mysql:host=$this->host;port=$this->port;dbname=$this->dbName",
+    $this->username,
+    $this->password
+    
+    
+);
+
+    }
+    
+class UserManager extends AbstractManager {
+    
+
+ public function __construct(string $dbName,string $port,string $host,string $username ,string $password)
+    {
+        $this->dbName = $dbName;
+        $this->port = $port;
+        $this->host = $host;
+        $this->username = $username;
+        $this->password = $password;
+        $this->initDb();
+        
+    }
+            public function getUserById(int $id): User{
+            }
+
+
+
+}
+class PostsManager extends AbstractManager {
+
+  public function getPostById(int $id): User{
+        }
+       }
+       
+class SalonsManager extends AbstractManager {
+
+  public function getSalonById(int $id): User{
+        }
+       }
+       
+class CategorysManager extends AbstractManager {
+
+  public function getCategoryById(int $id): User{
+        }
+       }
+    
+    
+
 TABLES SQL
 
 Users : ID , username, email, password ,
@@ -74,3 +174,6 @@ Login / register
 
 HomePage
 
+class PostsManager extends AbstractManager {
+                
+      
