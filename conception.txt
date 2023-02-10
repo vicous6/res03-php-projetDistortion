@@ -1,0 +1,76 @@
+-models : 
+
+Class Users ,
+    private ?int $id; 
+    private string $username;
+    private string $email; 
+    private string $password;
+construct($username, $email,password){
+    $id = null
+    $username =$username
+    $email =$email
+    $password =$password
+}
+
+  
+
+	
+Class Posts ,
+    private ?int id 
+    private string content
+    private string date
+construc($content $date){
+    this id = null
+    this content = $content
+    this date = $date
+}
+
+Class Categorie
+    private ?int $Id
+    private string $title
+    private array  $salon (object salon inside  )
+construc($title){
+    this id = null
+    this title = $title
+    this salon = [ ]
+}
+Methods: 
+addSalon (Salon $salon):array{
+
+}
+
+
+
+
+Class Salon
+    private ?int id 
+    private string title 
+    private array posts ( Object Post ) 
+construc($title){
+    this id = null
+    this title = $title
+    this posts = [ ]
+}
+Methods: 
+addPost (Post $post):array{
+
+}
+
+
+TABLES SQL
+
+Users : ID , username, email, password ,
+
+Posts : ID , content, author(clef : UsersId) idsalon( clef : Salon:id), date 
+Salons : ID, title, idCategories( clef: id Categories)
+Categories: ID , Title 
+
+
+3 Un schéma de votre base de données et des relations entre ses tables.
+
+4 Une liste de vos routes.
+
+Login / register 
+
+HomePage
+
