@@ -3,7 +3,7 @@
 class Salon {
     
     //private attribute
-    private int $id;
+    private ?int $id;
     private string $title;
     private array $post;
 
@@ -19,7 +19,7 @@ public function __construct(string $title, array $post)
 
     //public getter
     
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }

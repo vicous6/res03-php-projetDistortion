@@ -3,7 +3,7 @@
 Class User {
     
     //private attribute
-    private int $id;
+    private ?int $id;
     private string $username;
     private string $email;
     private string $password;
@@ -21,30 +21,30 @@ public function __construct(string $username, string $email, string $password)
 
     //public getter
     
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }
     
     public function getUsername() : string
     {
-        return $this->Username;
+        return $this->username;
     }
     
     public function getEmail() : string
     {
-        return $this->Email;
+        return $this->email;
     }
     
     public function getPassword() : string
     {
-        return $this->Password;
+        return $this->password;
     }
     
     
     //public setter
     
-    public function setId(int $gitid) : void
+    public function setId(int $id) : void
     {
         $this->id = $id;
     }
