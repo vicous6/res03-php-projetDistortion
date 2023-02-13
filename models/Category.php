@@ -1,19 +1,19 @@
 <?php
-class Categories {
+class Category {
     
     //private attribute
     private int $id;
     private string $title;
     private string $salon;
-}
+
 
 
     //public constructor
-public function __constructor(int $id, string $title, array $salon)
+public function __construct(string $title, array $salon)
 {
     $this->id = null;
     $this->title = $title;
-    $this->salon = [ ];
+    $this->salon = [];
 }
 
     //public getter
@@ -51,3 +51,6 @@ public function __constructor(int $id, string $title, array $salon)
     {
         $this->salon = $salon;
     }
+}
+
+?>

@@ -6,11 +6,11 @@ class Salon {
     private int $id;
     private string $title;
     private array $post;
-}
+
 
     //public constructor
     
-public function __constructor(int $id, string $title, array $post)
+public function __construct(string $title, array $post)
 {
     $this->id = null;
     $this->title = $title;
@@ -52,5 +52,5 @@ public function __constructor(int $id, string $title, array $post)
     {
         $this->post = $post;
     }
-
+}
 ?>

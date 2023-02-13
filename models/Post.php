@@ -1,6 +1,6 @@
 <?php  
 
-class Posts {
+class Post {
     private ?int $id ;
     private string $content;
     

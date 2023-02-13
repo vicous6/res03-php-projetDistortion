@@ -1,17 +1,17 @@
 <?php
 
-Class Users {
+Class User {
     
     //private attribute
     private int $id;
     private string $username;
     private string $email;
     private string $password;
-}
+
 
 
     //public constructor
-public function __constructor(int $id, string $username, string $email, string $password)
+public function __construct(string $username, string $email, string $password)
 {
     $this->id = null;
     $this->username = $username;
@@ -38,7 +38,7 @@ public function __constructor(int $id, string $username, string $email, string $
     
     public function getPassword() : string
     {
-        return $this->Password
+        return $this->Password;
     }
     
     
@@ -63,3 +63,7 @@ public function __constructor(int $id, string $username, string $email, string $
     {
         $this->password = $password;
     }
+    
+}
+
+?>
