@@ -45,8 +45,10 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
     // echo($loginState);
 
             if($loginState===true ){
+                
+                $email = $this->manager->getUserByEmail($_POST["login"]);
                  $_SESSION["start"]= true ;
-                 $_SESSION["userName"] = $_POST["login"];
+                 $_SESSION["userName"] = $email->getUsername();
                 $this->render( "homepage" , ["page de connexion"]);
              
             }else{

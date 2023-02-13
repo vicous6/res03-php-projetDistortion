@@ -4,7 +4,7 @@ class Router {
 
     // private attribute
     private UsersController $uc;
-    // private PostsController $pc;
+    private PostsController $pc;
     // private SalonsController $sc;
     // private CategoriesController $cc;
   
@@ -14,7 +14,7 @@ class Router {
     public function __construct()
     {
         $this->uc = new UsersController();
-        // $this->pc = new PostsController();
+        $this->pc = new PostsController();
         // $this->sc = new SalonsController();
         // $this->cc = new CategoriesController();
         
@@ -29,7 +29,15 @@ class Router {
             
          if(isset($_SESSION) && $_SESSION["start"]=== true ){
              
-             $this->uc->homepage();
+             
+            //  $arrayPosts = $this->pc->getPosts();
+            //  $arrayCategories == $this->cc->getCategories(); 
+            //   $arraySalons == $this->cc->getSalon(); 
+             
+            //  $this->uc->homepage($arrayPosts,$arraySalons,$arrayCategories);
+            
+            $this->uc->homepage();
+             
          }else{
              
              $this->uc->login();
@@ -40,6 +48,7 @@ class Router {
             // $this->sc->index();
             // $this->cc->index();
         }else if($route === "register"){
+            
              $this->uc->registerUser();
             
         }
