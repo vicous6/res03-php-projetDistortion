@@ -11,26 +11,23 @@
         <link rel="stylesheet" href="assets/styles/css/style.css" />
     </head>
 <body id="register">
-<form action="index.php" method="post">
+<form action="index.php?route=register" method="post">
     <fieldset>
-  <label for="firstName">Prénom</label>
-  <input type="text" id="firstName" name="firstName">
+  <label for="firstName">Username</label>
+  <input type="text" id="registerUsername" name="registerUsername">
     </fieldset>
-    <fieldset>
-  <label for="lastName">Nom</label>
-  <input type="text" id="lastName" name="lastName">
-    </fieldset>
+ 
     <fieldset>
   <label for="email">Email</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="registerEmail" name="registerEmail">
     </fieldset>
     <fieldset>
   <label for="password">Mot de passe</label>
-  <input type="password" id="password" name="password">
+  <input type="password" id="registerPassword" name="registerPassword">
     </fieldset>
     <fieldset>
   <label for="confirmPassword">Confirmation du mot de passe</label>
-  <input type="password" id="confirmPwd" name="confirmPwd">
+  <input type="password" id="registerConfirmPwd" name="registerConfirmPwd">
     </fieldset>
   <input type="hidden" name="formName" value="register">
 

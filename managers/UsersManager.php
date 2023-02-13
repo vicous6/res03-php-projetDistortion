@@ -3,6 +3,7 @@ require'managers/AbstractManager.php';
 require'models/User.php';
 class UsersManager extends AbstractManager {
 
+// private PDO $db; 
 
 public function __construct(string $dbName,string $port,string $host,string $username ,string $password)
     {
@@ -15,17 +16,18 @@ public function __construct(string $dbName,string $port,string $host,string $use
         
     }
     
-    public function createUser(User $user): User{
+    public function createUser(User $user):void{
     
-    $query = $db->prepare('INSERT INTO users VALUES (null, :username,:email,:password)');
+    $query = $this->db->prepare('INSERT INTO users VALUES (null, :username,:email,:password)');
 
     	$parameters = [
 	    "username"=>$user->getUsername(),
 	    "email"=>$user->getEmail(),
 	    "password"=>$user->getPassword()
 	];
-$query->execute();
+$query->execute($parameters);
 $thePost = $query->fetch(PDO::FETCH_ASSOC);
+echo "un user push";
 }
 
     public function getUserById(int $id): ?User{
@@ -52,7 +54,7 @@ return $newPost;
                 
         $theUser = $query->fetch(PDO::FETCH_ASSOC);
         
-        var_dump($theUser);
+        // var_dump($theUser);
       if($theUser ===false){
           
           return null;

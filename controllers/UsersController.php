@@ -33,13 +33,15 @@ class UsersController extends AbstractController {
  }
 }
 
+
+//utilise login User juste au dessus 
 public function login (){
-   
+    echo 'coucou';
 
 if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&& !empty($_POST["password"])){
     
     $loginState = $this->loginUser($_POST["login"],$_POST["password"]);
-    
+   
     echo($loginState);
 
             if($loginState===true ){
@@ -54,17 +56,48 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
 
 
    
+}else{
+    
+    $this->render( "login" , ["page de connexion"]); 
 }
     
    
-
-
 }
+
+
 //  
 
+public function registerUser(){
+
+if(isset($_POST["registerUsername"])&& !empty($_POST["registerUsername"])&& 
+   isset($_POST["registerEmail"])&& !empty($_POST["registerEmail"])&&
+   isset($_POST["registerPassword"])&& !empty($_POST["registerPassword"])&&
+   isset($_POST["registerConfirmPwd"])&& !empty($_POST["registerConfirmPwd"])
+){
+    // echo 'les champs sont remplis';
+    if($_POST["registerPassword"] === $_POST["registerConfirmPwd"]){
+        // echo 'les pass sont identiques';
+        if($this->manager->getUserByEmail($_POST["registerEmail"]) ===null){
+            // echo "email unique";
+            $newUser= new User ($_POST["registerUsername"],$_POST["registerEmail"],$_POST["registerPassword"]);
+            // var_dump($newUser);
+            $this->manager->createUser($newUser);
+            
+             $this->render( "login" , ["page de connexion"]); 
+        }
+    }
+    
+    
+   
+}else{
+    
+    
+$this->render( "register" , ["page d'inscription"]); 
+}
 
 
+// $this->manager->createUser();
  }   
 
-
+}
 ?>

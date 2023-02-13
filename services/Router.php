@@ -39,11 +39,8 @@ class Router {
             // $this->pc->index();
             // $this->sc->index();
             // $this->cc->index();
-        }else if(route === "register"){
-            
-            
-        }else if(route === "homepage"){
-            
+        }else if($route === "register"){
+             $this->uc->registerUser();
             
         }
         
