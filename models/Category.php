@@ -2,7 +2,7 @@
 class Category {
     
     //private attribute
-    private int $id;
+    private ?int $id;
     private string $title;
     private string $salon;
 
@@ -18,7 +18,7 @@ public function __construct(string $title, array $salon)
 
     //public getter
     
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }

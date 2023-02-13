@@ -1,5 +1,6 @@
 <?php
-
+require'managers/AbstractManager.php';
+require'models/User.php';
 class UsersManager extends AbstractManager {
 
 
@@ -26,7 +27,8 @@ public function __construct(string $dbName,string $port,string $host,string $use
 $query->execute();
 $thePost = $query->fetch(PDO::FETCH_ASSOC);
 }
-public function getUserById(int $id): User{
+
+    public function getUserById(int $id): ?User{
       
        $query = $this->db->prepare('SELECT * FROM users WHERE id = :id');
 	$parameters = [
@@ -38,6 +40,33 @@ $newPost = new Post (null, $thePost["username"],$thePost["email"],$thePost["pass
 $newPost->setId($id);
 return $newPost;
         }
+        
+    public function getUserByEmail(string $email): ?User{
+        
+         $query = $this->db->prepare('SELECT * FROM users WHERE email = :email');
+	$parameters = [
+	    "email"=>$email
+	];
+	
+        $query->execute($parameters);
+                
+        $theUser = $query->fetch(PDO::FETCH_ASSOC);
+        
+        var_dump($theUser);
+      if($theUser ===false){
+          
+          return null;
+      }else{
+            $newUser= new User ($theUser["username"],$theUser["email"],$theUser["password"]);
+        
+        $newUser->setId($theUser["id"]);
+        
+        return $newUser;
+      }
+                
+        
+        
+    }
     
 }
     ?>

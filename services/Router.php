@@ -27,9 +27,15 @@ class Router {
         
         if($route === "login" || $route === ""){
             
-         // if connecter /pas connecter 
+         if(isset($_SESSION) && $_SESSION["start"]=== true ){
+             
+             $this->uc->homepage();
+         }else{
+             
+             $this->uc->login();
+         }
             
-            $this->uc->login();
+            
             // $this->pc->index();
             // $this->sc->index();
             // $this->cc->index();
