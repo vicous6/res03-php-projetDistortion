@@ -36,18 +36,19 @@ class UsersController extends AbstractController {
 
 //utilise login User juste au dessus 
 public function login (){
-    echo 'coucou';
+    // echo 'coucou';
 
 if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&& !empty($_POST["password"])){
     
     $loginState = $this->loginUser($_POST["login"],$_POST["password"]);
    
-    echo($loginState);
+    // echo($loginState);
 
             if($loginState===true ){
                  $_SESSION["start"]= true ;
                  $_SESSION["userName"] = $_POST["login"];
                 $this->render( "homepage" , ["page de connexion"]);
+             
             }else{
                   $_SESSION["start"]= false ;
                 $this->render( "login" , ["page de connexion"]); 
