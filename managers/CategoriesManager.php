@@ -41,6 +41,36 @@ public function addSalons (Salon $salon){
     
     
 }
+
+
+
+
+pulic function getAllCategories():array{
+    
+    
+    {
+          
+           $query = $db->prepare('SELECT * FROM categories');
+
+    	$parameters = [
+	   
+	];
+$query->execute();
+$theCats = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+$tab = [];
+
+foreach($theCats as $cat){
+    
+    
+    $newCat = new Category ($cat["content"],$cat["user_id"],$cat["salon_id"]);
+    $newCat -> setId($cat["id"]);
+    array_push($tab,$newCat);
+}
+return $tab;
+}
+}
        }
  
  

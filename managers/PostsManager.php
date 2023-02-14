@@ -47,6 +47,17 @@ public function getAllPosts(): array{
 	];
 $query->execute();
 $thePosts = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+$tab = [];
+
+foreach($thePosts as $post){
+    
+    
+    $newPost = new Post ($post["content"],$post["user_id"],$post["salon_id"]);
+    $newPost -> setId($post["id"]);
+    array_push($tab,$newPost);
+}
 return $tab;
 }
 

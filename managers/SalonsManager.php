@@ -46,12 +46,12 @@ public function getAllSalons(Salon $salon) : array
     
     $query = $this->db->prepare('SELECT * FROM salons');
     $query->execute();
-    $allsalon= $query->fetchAll(PDO::FETCH_ASSOC);
-    return $allsalon;
+    $allSalon= $query->fetchAll(PDO::FETCH_ASSOC);
+    return $allSalon;
     
     $tab = [];
     
-    foreach($allsalon as $salon)
+    foreach($allSalon as $salon)
     {
         $newSalon = new Salon($salon["content"], $salon["category_id"]);
         $newSalon->setID($salon["id"]);
