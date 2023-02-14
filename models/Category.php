@@ -4,12 +4,12 @@ class Category {
     //private attribute
     private ?int $id;
     private string $title;
-    private string $salon;
+    private array $salon;
 
 
 
     //public constructor
-public function __construct(string $title, array $salon)
+public function __construct(string $title)
 {
     $this->id = null;
     $this->title = $title;
@@ -37,7 +37,7 @@ public function __construct(string $title, array $salon)
     
     //public setter
     
-    public function setId(int $gitid) : void
+    public function setId(int $id) : void
     {
         $this->id = $id;
     }

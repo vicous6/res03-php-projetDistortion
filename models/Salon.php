@@ -5,18 +5,18 @@ class Salon {
     //private attribute
     private ?int $id;
     private string $title;
-    private array $post;
     private int $category_id;
+     private array $post;
 
 
     //public constructor
     
-public function __construct(string $title, array $post, int $category_id)
+public function __construct(string $title, int $category_id)
 {
     $this->id = null;
     $this->title = $title;
-    $this->post = [ ];
     $this->category_id = $category_id;
+    $this->post = [ ];
 }
 
     //public getter
@@ -63,6 +63,12 @@ public function __construct(string $title, array $post, int $category_id)
     public function setCategory_id(int $id) : void
     {
         $this->category_id = $category_id;
+    }
+    
+    public function addPostInSalon(Post $post):void {
+        
+        
+        
     }
 }
 ?>
