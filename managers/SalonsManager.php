@@ -36,12 +36,35 @@ $theSalon= $query->fetch(PDO::FETCH_ASSOC);
 return $theSalon;
         }
         
-public function addPosts(Post $post):array{
+public function addSalon(Salon $salon):array{
     
     // select * from post where id_salon = $this->id
 }
 
+public function getAllSalons(Salon $salon) : array
+{
+    
+    $query = $this->db->prepare('SELECT * FROM salons');
+    $query->execute();
+    $allsalon= $query->fetchAll(PDO::FETCH_ASSOC);
+    return $allsalon;
+    
+    $tab = [];
+    
+    foreach($allsalon as $salon)
+    {
+        $newSalon = new Salon($salon["content"], $salon["category_id"]);
+        $newSalon->setID($salon["id"]);
+        
+        $tab[] = $newSalon;
+        
+        return $tab;
     }
+}
+
+
+
+}
  
  
 
