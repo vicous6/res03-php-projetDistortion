@@ -12,7 +12,7 @@ if(isset($_GET["route"]) && !empty($_GET["route"])){
     }
 
 
-echo $route ; 
+// echo $route ; 
 
 
 $leRouter->checkRoute($route);
