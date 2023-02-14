@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,15 +54,17 @@ table {
   display: grid;
 }
 #register form {
-  align-self: center;
-  justify-self: center;
   display: grid;
   padding: 2rem;
   margin-top: -34rem;
   border-radius: 30px;
   box-shadow: 10px 5px 5px black;
-  height: 30vh;
+  height: 50vh;
   width: 30vh;
+  position: absolute; /* postulat de départ */
+  top: 50%;
+  left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
 }
 #register form h1 {
   text-align: center;
@@ -73,9 +76,14 @@ table {
 }
 #register form input {
   color: red;
+  border-radius: 10px;
+  float: left;
 }
 #register form label {
   color: purple;
+  display: block;
+  float: left;
+  width: 150px;
 }
 #register form #button {
   align-self: center;
@@ -87,21 +95,29 @@ table {
 #register form #button label {
   color: red;
 }
+#register form #button #button1 {
+  align-self: center;
+  justify-self: center;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 30px;
+}
 
 #login {
   font-family: "Montserrat";
   display: grid;
 }
 #login form {
-  align-items: center;
-  justify-self: center;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   padding: 2rem;
   border-radius: 30px;
   box-shadow: 10px 5px 5px black;
-  height: 30vh;
-  width: 30vh;
+  height: 35vh;
+  width: 35vh;
+  position: absolute; /* postulat de départ */
+  top: 50%;
+  left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
 }
 #login form h1 {
   text-align: center;
@@ -113,9 +129,15 @@ table {
 }
 #login form input {
   color: red;
+  border-radius: 10px;
+  float: left;
 }
 #login form label {
+  text-align: center;
   color: purple;
+  display: block;
+  float: left;
+  width: 150px;
 }
 #login form a {
   text-decoration: none;
@@ -124,7 +146,7 @@ table {
 #login form #button {
   align-self: center;
   justify-self: center;
-  height: 5vh;
+  height: 4vh;
   width: 10vw;
   border-radius: 30px;
 }
