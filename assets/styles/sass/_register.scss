@@ -1,12 +1,13 @@
 #register {
     font-family: "Montserrat";
     display: grid;
-    form{
+    form {
+        display: grid;
         padding: 2rem;
         border-radius: 30px;
         box-shadow: 10px 5px 5px black;
         height: 40vh;
-        width: 30vh;
+        width: 40vh;
         position: absolute; /* postulat de départ */
         top: 50%; left: 50%; /* à 50%/50% du parent référent */
         transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
@@ -20,7 +21,7 @@
             color: purple;
         }
         
-         #login, #password {
+         #registerUsername, #registerEmail, #registerPassword, #registerConfirmPwd {
             background: #CDEFF6;
         }
         
@@ -28,6 +29,7 @@
             color: red;
             border-radius: 10px;
             float: left;
+            width: 200px;
         }
         
         label {
@@ -37,25 +39,30 @@
             width:150px;
         }
     
+    #buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         
-        #button{
+        #button1{
+            display: grid;
+            grid-column: 1 / 2;
                 align-self: center;
                 justify-self: center;
                 height: 5vh;
                 width: 10vw;
                 border-radius: 30px;
-                label {
-                    color: red;
+                font-weight : bold;
                 }
                 
-        #button1{
+        #button2{
+            display: grid;
+            grid-columns: 2 / 3;
                 align-self: center;
                 justify-self: center;
-                height: 5vh;
-                width: 10vw;
+                height: 3vh;
+                width: 8vw;
                 border-radius: 30px;
-        }
+                }
             }
+        }
     }
-    
-}
