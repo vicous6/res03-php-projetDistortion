@@ -37,8 +37,8 @@ $thePost = $query->fetch(PDO::FETCH_ASSOC);
 return $thePost;
         }
        
-       
-      public function getPostById(int $id): array{
+      
+public function getAllPosts(): array{
           
            $query = $db->prepare('SELECT * FROM posts');
 
@@ -47,32 +47,18 @@ return $thePost;
 	];
 $query->execute();
 $thePosts = $query->fetchAll(PDO::FETCH_ASSOC);
-
-foreach($thePosts as $post){
-    
-    $tab =[];
-foreach($all as $object){
-    
-    // $newObject = new User($object["email"],$object["username"],$object["password"]);
-    // $newObject->setId($object["id"]);
-    // array_push($tab, $newObject);
-    
-    array_push($tab, $object)
-    
-}
-// var_dump($all);
 return $tab;
+}
+
+
+
+
     
 }
 
 
 
 
-      }  
-        
-        
-}
- 
  
 
 

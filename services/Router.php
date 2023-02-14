@@ -1,5 +1,8 @@
 <?php 
-require'controllers/UsersController.php';
+require 'controllers/UsersController.php';
+require 'controllers/PostsController.php';
+require 'controllers/SalonsController.php';
+require 'controllers/CategoriesController.php';
 class Router {
 
     // private attribute
@@ -30,9 +33,9 @@ class Router {
          if(isset($_SESSION) && $_SESSION["start"]=== true ){
              
              
-            //  $arrayPosts = $this->pc->getPosts();
-            //  $arrayCategories == $this->cc->getCategories(); 
-            //   $arraySalons == $this->cc->getSalon(); 
+            //  $arrayPosts = $this->pc->getAllPosts();
+            //  $arrayCategories == $this->cc->getAllCategories(); 
+            //   $arraySalons == $this->cc->getAllSalons(); 
              
             //  $this->uc->homepage($arrayPosts,$arraySalons,$arrayCategories);
             

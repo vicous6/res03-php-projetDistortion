@@ -49,7 +49,9 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
                 $email = $this->manager->getUserByEmail($_POST["login"]);
                  $_SESSION["start"]= true ;
                  $_SESSION["userName"] = $email->getUsername();
-                $this->render( "homepage" , ["page de connexion"]);
+                 
+                 
+                // $this->render( "homepage" , ["page de connexion"]);
              
             }else{
                   $_SESSION["start"]= false ;
@@ -63,13 +65,17 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
     
     $this->render( "login" , ["page de connexion"]); 
 }
-    
+
+
+//     public function homepage () : array{
+        
+        
    
-}
+// }
 
 
 //  
-
+}
 public function registerUser(){
 
 if(isset($_POST["registerUsername"])&& !empty($_POST["registerUsername"])&& 
@@ -101,6 +107,8 @@ $this->render( "register" , ["page d'inscription"]);
 
 // $this->manager->createUser();
  }   
+
+
 
 }
 ?>
