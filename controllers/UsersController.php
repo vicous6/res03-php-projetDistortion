@@ -35,7 +35,7 @@ class UsersController extends AbstractController {
 
 
 //utilise login User juste au dessus 
-public function login (){
+    public function login (){
     // echo 'coucou';
 
 if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&& !empty($_POST["password"])){
@@ -52,6 +52,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
                  
                  
                 // $this->render( "homepage" , ["page de connexion"]);
+                $this->homepage();
              
             }else{
                   $_SESSION["start"]= false ;
@@ -67,16 +68,17 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
 }
 
 
-//     public function homepage () : array{
-        
-        
-   
-// }
 
 
 //  
 }
-public function registerUser(){
+
+    public function homepage() :void {
+        
+  $this->render( "homepage" , ["page de connexion"]); 
+}
+
+    public function registerUser(){
 
 if(isset($_POST["registerUsername"])&& !empty($_POST["registerUsername"])&& 
    isset($_POST["registerEmail"])&& !empty($_POST["registerEmail"])&&

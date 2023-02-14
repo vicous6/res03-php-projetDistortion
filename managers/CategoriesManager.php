@@ -45,23 +45,23 @@ public function addSalons (Salon $salon){
 
 
 
-pulic function getAllCategories():array{
+public function getAllCategories():array{
     
     
     {
           
            $query = $db->prepare('SELECT * FROM categories');
-
-    	$parameters = [
+    
+$parameters = [
 	   
 	];
 $query->execute();
 $theCats = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
-$tab = [];
+    $tab = [];
 
-foreach($theCats as $cat){
+    foreach($theCats as $cat){
     
     
     $newCat = new Category ($cat["content"],$cat["user_id"],$cat["salon_id"]);
@@ -71,7 +71,7 @@ foreach($theCats as $cat){
 return $tab;
 }
 }
-       }
+}
  
  
 
