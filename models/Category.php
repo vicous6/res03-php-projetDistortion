@@ -51,6 +51,14 @@ public function __construct(string $title)
     {
         $this->salon = $salon;
     }
+    
+    
+    public function addSalonInCategories(Salon $salon) : array
+    {
+        
+        array_push($this->salon, $salon);
+        
+    }
 }
 
 ?>
