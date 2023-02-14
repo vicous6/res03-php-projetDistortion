@@ -76,6 +76,8 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
     public function homepage() :void {
         
   $this->render( "homepage" , ["page de connexion"]); 
+  
+  
 }
 
     public function registerUser(){
