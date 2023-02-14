@@ -54,12 +54,10 @@ table {
   display: grid;
 }
 #register form {
-  display: grid;
   padding: 2rem;
-  margin-top: -34rem;
   border-radius: 30px;
   box-shadow: 10px 5px 5px black;
-  height: 50vh;
+  height: 40vh;
   width: 30vh;
   position: absolute; /* postulat de départ */
   top: 50%;
@@ -106,6 +104,7 @@ table {
 #login {
   font-family: "Montserrat";
   display: grid;
+  width: 100vw;
 }
 #login form {
   display: grid;
@@ -130,14 +129,15 @@ table {
 #login form input {
   color: red;
   border-radius: 10px;
-  float: left;
+  float: right;
+  width: 200px;
 }
 #login form label {
   text-align: center;
   color: purple;
   display: block;
   float: left;
-  width: 150px;
+  width: 100px;
 }
 #login form a {
   text-decoration: none;

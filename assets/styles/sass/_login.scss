@@ -1,6 +1,7 @@
 #login {
     font-family: "Montserrat";
     display: grid;
+    width: 100vw;
     form{
         display: grid;
         padding: 2rem;
@@ -26,7 +27,8 @@
         input{
             color: red;
             border-radius: 10px;
-            float: left;
+            float: right;
+            width: 200px;
         }
         
         label {
@@ -34,7 +36,7 @@
             color: purple; 
             display:block;
             float:left;
-            width:150px;
+            width: 100px;
         }
         
         a {
