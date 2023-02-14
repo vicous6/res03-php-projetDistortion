@@ -53,7 +53,7 @@ public function __construct(string $title)
     }
     
     
-    public function addSalonInCategories(Salon $salon) : array
+    public function addSalonInCategories(Salon $salon) : void
     {
         
         array_push($this->salon, $salon);

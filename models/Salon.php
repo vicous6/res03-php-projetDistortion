@@ -67,7 +67,7 @@ public function __construct(string $title, int $category_id)
     
     public function addPostInSalon(Post $post):void {
         
-        
+        array_push($this->post, $post);
         
     }
 }

@@ -80,14 +80,52 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
      $categoriesManager = new CategoriesManager("tonygohin_distorsion","3306","db.3wa.io","tonygohin","f80620de30f1b8d1caba3a7e4b950a9a")  ;
      $salonManager = new SalonsManager("tonygohin_distorsion","3306","db.3wa.io","tonygohin","f80620de30f1b8d1caba3a7e4b950a9a")  ;
       
-      $result =   $postManager->getAllPosts();
-       $result2 =   $categoriesManager->getAllCategories();
-      $result3 =   $salonManager->getAllSalons();
-      
-      $resultss= [$result,$result3,$result2];
+      $posts =   $postManager->getAllPosts();
+       $categories =   $categoriesManager->getAllCategories();
+      $salons =   $salonManager->getAllSalons();
       
       
-  $this->render( "homepage" , $resultss); 
+      $resultss = [];
+      
+      
+    //   hydrate salon avec les posts correspondant
+      foreach($salons as $salon){
+          
+          $id = $salon->getId();
+          
+          foreach($posts as $post){
+              
+              
+              if($id === $post->getSalon_id()){
+                  
+                  
+                  $salon->addPostInSalon($post);
+              }
+          }
+          
+      }
+        //   hydrate categorie avec les salons correspondant
+      
+      foreach($categories as $category){
+          
+          $id = $category->getId();
+          
+          foreach($salons as $salon){
+              
+              
+              if($id === $salon->getCategory_id()){
+                  
+                  
+                  $category->addSalonInCategories($salon);
+              }
+          }
+          
+      }
+      
+      
+      
+      
+  $this->render( "homepage" , $categories); 
   
   
 }
