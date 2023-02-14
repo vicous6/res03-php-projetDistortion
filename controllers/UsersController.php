@@ -50,7 +50,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
                  $_SESSION["start"]= true ;
                  $_SESSION["userName"] = $email->getUsername();
                  
-                 
+                //  $trucc= [];
                 // $this->render( "homepage" , ["page de connexion"]);
                 $this->homepage();
              
@@ -75,7 +75,17 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
 
     public function homepage() :void {
         
-  $this->render( "homepage" , ["page de connexion"]); 
+        
+     $postManager = new PostsManager("tonygohin_distorsion","3306","db.3wa.io","tonygohin","f80620de30f1b8d1caba3a7e4b950a9a")  ;
+     $categoriesManager = new CategoriesManager("tonygohin_distorsion","3306","db.3wa.io","tonygohin","f80620de30f1b8d1caba3a7e4b950a9a")  ;
+     $salonManager = new SalonsManager("tonygohin_distorsion","3306","db.3wa.io","tonygohin","f80620de30f1b8d1caba3a7e4b950a9a")  ;
+      
+      $result =   $postManager->getAllPosts();
+       $result2 =   $categoriesManager->getAllCategories();
+      $result3 =   $salonManager->getAllSalons();
+      
+      $resultss= [$result,$result3,$result2];
+  $this->render( "homepage" , $resultss); 
   
   
 }

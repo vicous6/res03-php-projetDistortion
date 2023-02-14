@@ -1,5 +1,5 @@
 <?php 
-
+require "models/Salon.php";
 class SalonsManager extends AbstractManager {
 
 
@@ -41,25 +41,26 @@ public function addSalon(Salon $salon):array{
     // select * from post where id_salon = $this->id
 }
 
-public function getAllSalons(Salon $salon) : array
+public function getAllSalons() : array
 {
     
     $query = $this->db->prepare('SELECT * FROM salons');
     $query->execute();
     $allSalon= $query->fetchAll(PDO::FETCH_ASSOC);
-    return $allSalon;
+    // return $allSalon;
     
     $tab = [];
     
     foreach($allSalon as $salon)
     {
-        $newSalon = new Salon($salon["content"], $salon["category_id"]);
+        $newSalon = new Salon($salon["title"], $salon["category_id"]);
         $newSalon->setID($salon["id"]);
         
-        $tab[] = $newSalon;
+       array_push($tab ,$newSalon);
         
-        return $tab;
+        
     }
+    return $tab;
 }
 
 

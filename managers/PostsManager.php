@@ -1,5 +1,5 @@
 <?php 
-
+require "models/Post.php";
 class PostsManager extends AbstractManager {
 
 
@@ -40,7 +40,7 @@ return $thePost;
       
 public function getAllPosts(): array{
           
-           $query = $db->prepare('SELECT * FROM posts');
+           $query = $this->db->prepare('SELECT * FROM posts');
 
     	$parameters = [
 	   
@@ -54,8 +54,11 @@ $tab = [];
 foreach($thePosts as $post){
     
     
-    $newPost = new Post ($post["content"],$post["user_id"],$post["salon_id"]);
+    $newPost = new Post ($post["content"],$post["users_id"],$post["salon_id"]);
     $newPost -> setId($post["id"]);
+    $newPost -> setUserId($post["users_id"]);
+    $newPost -> setSalonId($post["salon_id"]);
+    
     array_push($tab,$newPost);
 }
 return $tab;

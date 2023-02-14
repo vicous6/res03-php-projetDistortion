@@ -1,5 +1,5 @@
 <?php 
-
+require"models/Category.php";
 class CategoriesManager extends AbstractManager {
 
 
@@ -17,7 +17,7 @@ public function __construct(string $dbName,string $port,string $host,string $use
 
 public function createCategory(Category $category): Category{
     
-    $query = $db->prepare('INSERT INTO categories VALUES (null, :title)');
+    $query = $this->db->prepare('INSERT INTO categories VALUES (null, :title)');
 
     	$parameters = [
 	    "title"=>$category->getTitle()
@@ -50,7 +50,7 @@ public function getAllCategories():array{
     
     {
           
-           $query = $db->prepare('SELECT * FROM categories');
+           $query = $this->db->prepare('SELECT * FROM categories');
     
 $parameters = [
 	   
@@ -64,7 +64,7 @@ $theCats = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach($theCats as $cat){
     
     
-    $newCat = new Category ($cat["content"],$cat["user_id"],$cat["salon_id"]);
+    $newCat = new Category ($cat["title"]);
     $newCat -> setId($cat["id"]);
     array_push($tab,$newCat);
 }
