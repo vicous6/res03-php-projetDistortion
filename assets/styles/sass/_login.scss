@@ -2,12 +2,11 @@
     font-family: "Montserrat";
     display: grid;
     form{
-        align-self: center;
+        align-items: center;
         justify-self: center;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         padding: 2rem;
-        margin-top: 12rem;
         border-radius: 30px;
         box-shadow: 10px 5px 5px black;
         height: 30vh;
