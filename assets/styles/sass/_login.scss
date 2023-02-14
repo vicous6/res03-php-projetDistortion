@@ -1,4 +1,5 @@
 #login {
+    font-family: "Montserrat";
     display: grid;
     form{
         align-self: center;
@@ -11,5 +12,35 @@
         box-shadow: 10px 5px 5px black;
         height: 30vh;
         width: 30vh;
+        
+        h1 {
+            text-align: center;
+            font-weight : bold;
+            color: purple;
+        }
+        
+        #login, #password {
+            background: #CDEFF6;
+        }
+        
+        input{
+            color: red;
+        }
+        
+        label {
+            color: purple; 
+        }
+        
+        #button{
+                align-self: center;
+                justify-self: center;
+                height: 5vh;
+                width: 10vw;
+                border-radius: 30px;
+                label {
+                    color: red;
+                }
+            }
     }
+    
 }

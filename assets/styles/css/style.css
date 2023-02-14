@@ -49,6 +49,7 @@ table {
 }
 
 #login {
+  font-family: "Montserrat";
   display: grid;
 }
 #login form {
@@ -63,17 +64,73 @@ table {
   height: 30vh;
   width: 30vh;
 }
-
-#register form {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  padding: 2rem;
-  border-radius: 30px;
-  box-shadow: 10px 5px 5px black;
+#login form h1 {
+  text-align: center;
+  font-weight: bold;
+  color: purple;
+}
+#login form #login, #login form #password {
+  background: #CDEFF6;
+}
+#login form input {
+  color: red;
+}
+#login form label {
+  color: purple;
+}
+#login form #button {
   align-self: center;
   justify-self: center;
-  height: 20%;
-  width: 15%;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 30px;
+}
+#login form #button label {
+  color: red;
+}
+
+#register {
+  font-family: "Montserrat";
+  display: grid;
+}
+#register form {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+  margin-top: 12rem;
+  border-radius: 30px;
+  box-shadow: 10px 5px 5px black;
+  height: 30vh;
+  width: 30vh;
+}
+#register form h1 {
+  text-align: center;
+  font-weight: bold;
+  color: purple;
+}
+#register form #login, #register form #registerPassword, #register form #registerUsername, #register form #registerEmail, #register form #registerConfirmPwd {
+  background: #CDEFF6;
+}
+#register form #login, #register form #password {
+  background: #CDEFF6;
+}
+#register form input {
+  color: red;
+}
+#register form label {
+  color: purple;
+}
+#register form #button {
+  align-self: center;
+  justify-self: center;
+  height: 5vh;
+  width: 10vw;
+  border-radius: 30px;
+}
+#register form #button label {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
