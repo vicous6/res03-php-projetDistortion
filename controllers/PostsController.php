@@ -1,5 +1,5 @@
 <?php
-require'controllers/AbstractController.php';
+// require'controllers/AbstractController.php';
 require 'managers/PostsManager.php';
 class PostsController extends AbstractController {
     
