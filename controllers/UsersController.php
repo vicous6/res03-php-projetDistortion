@@ -85,6 +85,8 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
       $result3 =   $salonManager->getAllSalons();
       
       $resultss= [$result,$result3,$result2];
+      
+      
   $this->render( "homepage" , $resultss); 
   
   
