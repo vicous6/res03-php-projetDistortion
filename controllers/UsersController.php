@@ -38,6 +38,9 @@ class UsersController extends AbstractController {
     public function login (){
     // echo 'coucou';
 
+
+
+
 if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&& !empty($_POST["password"])){
     
     $loginState = $this->loginUser($_POST["login"],$_POST["password"]);
@@ -47,6 +50,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
             if($loginState===true ){
                 
                 $email = $this->manager->getUserByEmail($_POST["login"]);
+                session_start();
                  $_SESSION["start"]= true ;
                  $_SESSION["userName"] = $email->getUsername();
                  
@@ -84,6 +88,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
        $categories =   $categoriesManager->getAllCategories();
       $salons =   $salonManager->getAllSalons();
       
+     
       
       $resultss = [];
       
@@ -121,11 +126,23 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
           }
           
       }
+     if(isset( $_GET['salon'])){
+         
+          $leSalon= $_GET['salon'];
+     }
+       
+      $dataSalon = [];
+  foreach($salons as $salon ){
+      if($salon->getId() == $leSalon ){
+           
+          array_push($dataSalon,$salon);
+      }
+       
+  }
+    
       
-    //   $leSalon = $_GET["salon"];
       
-      
-  $this->render( "homepage" , [$categories,$salons]); 
+  $this->render( "homepage" , ["category" => $categories , "salons" => $salons,"leBonSalon" => $dataSalon]); 
   
   
 }

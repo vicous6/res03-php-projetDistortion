@@ -26,7 +26,11 @@ class Router {
 
     public function checkRoute(string $route){
         
-
+if(isset($_GET["salon"])){
+    
+      $this->uc->homepage();
+    
+}else
            
         if($route === "login" || $route === ""){
             

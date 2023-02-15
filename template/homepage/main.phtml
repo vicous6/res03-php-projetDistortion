@@ -3,6 +3,24 @@
     <section>
         <?php
         
+        $newData = $data["leBonSalon"][0]->getPost();
+        
+        foreach($newData as $post){
+            
+            // echo $post->getContent();
+            // echo "<br>";
+            // var_dump( $post);
+            echo $post->getContent();
+            echo "<br>";
+            echo "<br>";
+        }
+    // var_dump($newData);
+    // for($i = 0 ; $i <count( $newData);$i++){
+        
+        
+    //     echo $newData[0];
+    // }
+        
         ?>
     </section>
     <section>
@@ -13,7 +31,7 @@
         </textarea>
         <button type="submit">Envoyer</button>
     </section>
-          rows="5" cols="33">
+         
         
         </textarea>
         <button type="submit">Envoyer</button>
