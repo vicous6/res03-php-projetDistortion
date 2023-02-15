@@ -28,7 +28,7 @@ public function __construct(string $title, int $category_id)
     
     public function getTitle() : string
     {
-        return $this->Title;
+        return $this->title;
     }
     
     public function getPost() : array

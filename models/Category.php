@@ -25,10 +25,10 @@ public function __construct(string $title)
     
     public function getTitle() : string
     {
-        return $this->Title;
+        return $this->title;
     }
     
-    public function getSalon() : string
+    public function getSalon() : array
     {
         return $this->salon;
     }
