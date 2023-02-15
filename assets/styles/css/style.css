@@ -175,37 +175,46 @@ table {
 
 #homepage {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr;
   grid-template-rows: 0.3fr 1fr 1fr;
   height: 100vh;
   font-family: "Montserrat";
+  margin-left: 10px;
 }
 #homepage > aside {
+  background-color: #C49FFF;
   display: grid;
   grid-column: 1/2;
   grid-row: 2/4;
   height: 100vh;
+  padding: 10px;
 }
 #homepage > aside h1 {
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 600;
 }
 #homepage > aside h2 {
-  font-weight: bold;
+  margin-top: 30px;
   color: purple;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
 }
 #homepage > aside a {
   text-decoration: none;
   color: red;
+  font-size: 1rem;
 }
 #homepage > #header {
+  background-color: #7D4FFE;
   display: grid;
   grid-column: 1/4;
   grid-row: 1/2;
-  margin-top: 10px;
+  padding: 10px;
 }
 #homepage > #header h1 {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 3rem;
   font-family: "Special Elite";
 }
 #homepage > #header p {
@@ -218,6 +227,7 @@ table {
   font-weight: bold;
 }
 #homepage > main {
+  background-color: #FFD0E6;
   display: grid;
   grid-column: 2/4;
   grid-row: 2/4;
