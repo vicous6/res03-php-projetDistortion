@@ -176,19 +176,48 @@ table {
 #homepage {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr 1fr;
+  height: 100vh;
+  font-family: "Montserrat";
 }
-#homepage aside {
+#homepage > aside {
   display: grid;
   grid-column: 1/2;
   grid-row: 2/4;
+  height: 100vh;
 }
-#homepage #header {
+#homepage > aside h1 {
+  font-weight: bold;
+}
+#homepage > aside h2 {
+  font-weight: bold;
+  color: purple;
+}
+#homepage > aside a {
+  text-decoration: none;
+  color: red;
+}
+#homepage > #header {
   display: grid;
   grid-column: 1/4;
   grid-row: 1/2;
+  margin-top: 10px;
 }
-#homepage main {
+#homepage > #header h1 {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Special Elite";
+}
+#homepage > #header p {
+  text-align: right;
+}
+#homepage > #header a {
+  text-decoration: none;
+  text-align: right;
+  color: purple;
+  font-weight: bold;
+}
+#homepage > main {
   display: grid;
   grid-column: 2/4;
   grid-row: 2/4;

@@ -1,21 +1,52 @@
 #homepage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr;
+    height: 100vh;
+    font-family:"Montserrat";
     
-    aside {
+    & > aside {
         display: grid;
         grid-column: 1 / 2;
         grid-row: 2 / 4;
+        height: 100vh;
+        
+        h1 {
+            font-weight: bold;
+        }
+        h2 {
+            font-weight: bold;
+            color: purple;
+        }
+        a {
+            text-decoration: none;
+            color: red;
+        }
+        
     }
     
-    #header {
+    & > #header {
         display: grid;
         grid-column: 1 / 4;
         grid-row: 1 / 2;
+        margin-top: 10px;
+        h1 {
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Special Elite';
+        }
+        p {
+            text-align: right;
+        }
+        a {
+            text-decoration: none;
+            text-align: right;
+            color: purple;
+            font-weight: bold;
+        }
     }
     
-    main {
+    & > main {
         display: grid;
         grid-column: 2 / 4;
         grid-row: 2 / 4;
