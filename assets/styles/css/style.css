@@ -173,4 +173,23 @@ table {
   color: red;
 }
 
+#homepage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+#homepage #aside {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+#homepage #header {
+  display: grid;
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+#homepage #main {
+  display: grid;
+}
+
 /*# sourceMappingURL=style.css.map */
