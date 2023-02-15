@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     
-    #aside {
+    aside {
         display: grid;
         grid-column: 1 / 2;
         grid-row: 2 / 4;
@@ -11,12 +11,14 @@
     
     #header {
         display: grid;
-        grid-column: 2 / 4;
-        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
     }
     
-    #main {
+    main {
         display: grid;
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
         
     }
 }
