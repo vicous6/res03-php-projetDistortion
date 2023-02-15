@@ -9,24 +9,14 @@
                         $truc = $data[0];
                         foreach($truc as $category){
                             
-                          
-                          
-                          
                                 $salons =  $category->getSalon(); 
                                 echo "<h2>".$category->getTitle()."</h1>";
                             echo "<ul>";
                             
-                            // echo "</br>";
-                            
                             foreach($salons as  $salon){
-                                
-                                // array_push($tabSalon,$salon->getTitle());
                                   
-                                echo "<li class = hidden >...".$salon->getTitle()."</li>";
-                                
-                                // echo "</br>";
-                              
-                               
+                                echo "<li class = hidden ><a href =index.php?route=".$salon->getId().">...".$salon->getTitle()."</a></li>";
+          
                             }
                             echo "</ul>";
                         }

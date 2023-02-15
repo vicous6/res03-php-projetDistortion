@@ -122,7 +122,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
           
       }
       
-      
+    //   $leSalon = $_GET["salon"];
       
       
   $this->render( "homepage" , [$categories,$salons]); 
