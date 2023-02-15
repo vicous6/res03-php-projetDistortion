@@ -1,29 +1,39 @@
+
+
 <aside>
                 <nav>
-                    <h1>_</h1>
-                    <ul>
-                        <li>
-                            <h2>_</h2>
-                            <ul>
-                                <h3>_</h3>
-                                <li>
-                                    <a href="">_</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h2>_</h2>
-                            <ul>
-                                <h3>_</h3>
-                                <li>
-                                    <a href="">_</a>
-                                </li>
+                    <h1>Navigation</h1>
+                    
+                <?php  
 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">_</a>
-                        </li>
-                    </ul>
+                        
+                        foreach($data as $category){
+                            
+                          
+                          
+                          
+                                $salons =  $category->getSalon(); 
+                                echo "<h2>".$category->getTitle()."</h1>";
+                            echo "<ul>";
+                            
+                            // echo "</br>";
+                            
+                            foreach($salons as  $salon){
+                                
+                                // array_push($tabSalon,$salon->getTitle());
+                                  
+                                echo "<li class = hidden >...".$salon->getTitle()."</li>";
+                                
+                                // echo "</br>";
+                              
+                               
+                            }
+                            echo "</ul>";
+                        }
+                        
+                        ?>
+                                           
+                                           
+                 
                 </nav>
 </aside>
