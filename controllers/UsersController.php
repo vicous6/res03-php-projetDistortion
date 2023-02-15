@@ -125,7 +125,7 @@ if(isset($_POST["login"])&& !empty($_POST["login"])&&isset($_POST["password"])&&
       
       
       
-  $this->render( "homepage" , $categories); 
+  $this->render( "homepage" , [$categories,$salons]); 
   
   
 }
